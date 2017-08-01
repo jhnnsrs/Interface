@@ -1,8 +1,8 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-fixed-top">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#"><b>jhnnsrs</b></a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -16,9 +16,14 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <ul *ngIf="anonymous" class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="fa fa-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="fa fa-sign-in"></span> Login</a></li>
+    </ul>
+    <a class="navbar-brand navbar-right" href="#">
+      <img *ngIf="anonymous" src="https://avatars2.githubusercontent.com/u/3322897?v=4&s=460" class="rounded-circle">
+
+    </a>
+
   </div>
 </nav>

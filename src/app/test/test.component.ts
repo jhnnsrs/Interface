@@ -47,7 +47,7 @@ export class TestComponent implements OnInit {
     }).subscribe(({data}) => {
       this.name = data.symptom.name;
       this.description = data.symptom.description;
-      this.disease = data.symptom.associateddiseases.edges[0].node.id
+      this.disease = data.symptom.associateddiseases.edges[0].node.name.name
     });
   }
 

@@ -7,6 +7,10 @@ import {ApolloModule} from "apollo-angular";
 import { TestComponent } from './test/test.component';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MaincontainerComponent } from './maincontainer/maincontainer.component';
+import { FooterComponent } from './footer/footer.component';
+import { CardComponent } from './card/card.component';
+import {HorizonService} from "./horizon.service";
 
 const networkInterface = createNetworkInterface({
   uri: 'http://127.0.0.1:8000/graphql'
@@ -36,13 +40,17 @@ export function provideClient(): ApolloClient {
     AppComponent,
     TestComponent,
     HeaderComponent,
+
+    MaincontainerComponent,
+    FooterComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
     ApolloModule.forRoot(provideClient),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [HorizonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
